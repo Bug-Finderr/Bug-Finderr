@@ -2,7 +2,7 @@
 
 ###
 
-<h6 align="center"><em>(Yes, I find bugs. No, I won’t fix yours for free... unless bribed with good food 🍰)</em></h6>
+<h6 align="center"><em>I build things for the web and occasionally find bugs along the way</em></h6>
 
 ###
 
@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">I'm a <strong>developer</strong> by day, a <strong>3D printing</strong> wizard by hobby 🧙‍♂️, and a <strong>comic</strong> whenever inspiration (or bad code) strikes. My humor ranges from dad-tier to dangerously unfiltered—no territory is off-limits.  <br><br>You'll rarely catch me without my <strong>earphones</strong> 🎧 (they're practically grafted to me), and if you see me idle, <strong>I’m not procrastinating—I’m just waiting for my peak night owl hours</strong>. 🌙💻</p>
+<p align="left">I'm a developer who likes talking about the web - everything from web apps to browsers & the tech that powers them. When I’m not coding, I’m either tinkering with 3D printing projects or lost in music (it’s always playing in the background). My best ideas usually come late at night when the world is quiet.</p>
 
 ###
 
@@ -74,7 +74,7 @@
 
 <br clear="both">
 
-<h3 align="left">Stats</h3>
+<h3 align="left">Stats & Activity</h3>
 
 ###
 
