@@ -2,15 +2,11 @@
 
 ###
 
-<h6 align="center"><em>I build things for the web and find bugs along the way</em></h6>
-
-###
-
 <img align="right" height="240" width="240" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnp6azVyODlvMXh5dHZzd25uZGhlZ3R4NXhxYWg2aGc3c3JpdTltdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LHb4L8BytFRGx15quf/giphy.gif"  />
 
 ###
 
-<p align="left">I'm an engineer who likes talking about the web - everything from web apps to browsers & the tech that powers them. When I’m not coding, I’m either tinkering with 3D printing projects or lost in music. My best ideas usually come late at night when the world is quiet.</p>
+<p align="left">I’m an engineer who likes talking about the web - everything from web apps to browsers & the tech that powers them. My best ideas usually come late at night when the world is quiet.</p>
 
 ###
 
@@ -55,32 +51,6 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=powershell" height="40" alt="powershell logo"  />
 </div>
-
-###
-
-<h3 align="left">Socials:</h3>
-
-###
-
-<div align="left">
-  <a href="http://discordapp.com/users/1050282108117061633" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="24" alt="discord logo"  />
-  </a>
-  <a href="mailto:sudu.boi.2k5@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="24" alt="gmail logo"  />
-  </a>
-  <a href="https://www.linkedin.com/in/sudharsan-two005/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="24" alt="linkedin logo"  />
-  </a>
-  <a href="https://t.me/sudu_boi" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="24" alt="telegram logo"  />
-  </a>
-  <a href="https://stackoverflow.com/users/22541625/bug-finderr" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Stackoverflow&logo=stackoverflow&label=&color=FE7A16&logoColor=white&labelColor=&style=for-the-badge" height="24" alt="stackoverflow logo"  />
-  </a>
-</div>
-
-###
 
 <br clear="both">
 
