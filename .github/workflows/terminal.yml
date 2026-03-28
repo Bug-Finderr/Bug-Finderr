@@ -1,0 +1,40 @@
+name: Generate terminal SVG
+
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/generate-terminal.py"
+      - "assets/cat.b64"
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: generate terminal svg
+        run: python3 scripts/generate-terminal.py
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+
+      - name: push to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: terminal-output
+          build_dir: assets
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
