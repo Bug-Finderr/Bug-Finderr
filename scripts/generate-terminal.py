@@ -5,11 +5,11 @@ import json
 import subprocess
 import sys
 from datetime import datetime, timezone
+from html import escape
 from pathlib import Path
 
 GITHUB_USER = "bug-finderr"
 TOP_LANGS = 5
-BAR_WIDTH = 18
 # Repos to exclude from language calculations (case-sensitive)
 EXCLUDE_REPOS = {
     "bug-finderr",
@@ -149,23 +149,15 @@ def get_language_stats():
     return [(name, (size / total) * 100, lang_colors.get(name, "#8b949e")) for name, size in top]
 
 
-def make_bar(pct):
-    """Unicode progress bar."""
-    filled = round(pct / 100 * BAR_WIDTH)
-    return "\u2588" * filled + "\u2591" * (BAR_WIDTH - filled)
-
-
 def build_lang_lines(languages):
     """Build HTML for language bars."""
     lines = []
     for name, pct, color in languages:
-        padded = name[:12].ljust(12)
-        bar = make_bar(pct)
         lines.append(
-            f'            <div class="lang-line">'
-            f'<span style="color:{color}">\u25cf</span> '
-            f'<span class="hl">{padded}</span> '
-            f'<span class="bar">{bar}</span> '
+            f'            <div class="lang-line" style="--lang-pct:{pct:.1f}%">'
+            f'<span class="lang-dot" style="background:{color}"></span>'
+            f'<span class="hl">{escape(name[:12])}</span>'
+            f'<span class="lang-meter"><span class="lang-fill"></span></span>'
             f'<span class="muted">{pct:5.1f}%</span>'
             f"</div>"
         )
@@ -252,9 +244,23 @@ def generate_svg(stats, languages, cat_b64):
         .stat-line {{ color: #c9d1d9; }}
         .stat-line .num {{ color: #58a6ff; font-weight: 600; }}
         .stat-line .lbl {{ color: #6e7681; }}
-        .lang-line {{ line-height: 1.9; font-size: 12.5px; }}
+        .lang-line {{
+          display: grid; grid-template-columns: 8px 94px 180px 44px;
+          column-gap: 7px; align-items: center;
+          line-height: 1.9; font-size: 12.5px;
+        }}
+        .lang-dot {{
+          width: 7px; height: 7px; border-radius: 50%;
+        }}
         .lang-line .hl {{ color: #c9d1d9; }}
-        .lang-line .bar {{ color: #3fb950; letter-spacing: -1px; font-size: 11px; }}
+        .lang-meter {{
+          display: block; width: 180px; height: 12px; overflow: hidden;
+          background: repeating-linear-gradient(90deg, rgba(63,185,80,0.58) 0 1px, transparent 1px 3px);
+        }}
+        .lang-fill {{
+          display: block; width: var(--lang-pct); height: 100%;
+          background: #3fb950;
+        }}
         .lang-line .muted {{ color: #6e7681; font-size: 11.5px; }}
         .prompt {{
           opacity: 0; animation: fadeIn 0.3s forwards; animation-delay: 6.0s;
@@ -274,7 +280,9 @@ def generate_svg(stats, languages, cat_b64):
           .about-text {{ color: #1f2328; }} .stat-line {{ color: #1f2328; }}
           .stat-line .num {{ color: #0969da; }}
           .stack-list {{ color: #656d76; }} .stack-list .hl {{ color: #1f2328; }}
-          .lang-line .hl {{ color: #1f2328; }} .lang-line .bar {{ color: #1a7f37; }}
+          .lang-line .hl {{ color: #1f2328; }}
+          .lang-meter {{ background: repeating-linear-gradient(90deg, rgba(26,127,55,0.5) 0 1px, transparent 1px 3px); }}
+          .lang-fill {{ background: #1a7f37; }}
           .cursor {{ background: #0969da; }}
           .sep {{ border-color: #d0d7de; }} .section-head {{ color: #656d76; }}
           .cat {{ border-color: #d0d7de; }}
